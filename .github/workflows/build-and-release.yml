@@ -13,8 +13,7 @@ jobs:
       - uses: actions/setup-go@v3
         with:
           go-version: '^1.18.3' # The Go version to download (if necessary) and use.
-      - name: Check Go Version 
-        run: go version 
+      - run: go version
       - name: Install Make 
         run: sudo apt-get install -y make 
       - name: Build Tool
