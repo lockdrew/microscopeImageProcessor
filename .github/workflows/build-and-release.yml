@@ -5,6 +5,7 @@ on:
       - 'v[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
+
   Build-CLI-Tool: 
     runs-on: ubuntu-latest 
     steps: 
