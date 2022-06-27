@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"errors"
+	"fmt"
 	"image/jpeg"
 	"os"
 
@@ -39,6 +40,8 @@ func mergeImages(imageFileNames []string, width int, height int) error {
 		grids = append(grids, &gim.Grid{ImageFilePath: imageName})
 	}
 
+	fmt.Sprintf("Width : %d \n", width)
+	fmt.Sprintf("Height : %d \n", height)
 	rgba, err := gim.New(grids, width, height).Merge()
 	if err != nil {
 		return err
