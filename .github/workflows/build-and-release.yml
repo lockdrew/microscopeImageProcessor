@@ -26,7 +26,7 @@ jobs:
   Release-CLI-Tool: 
     runs-on: ubuntu-latest 
     needs: Build-CLI-Tool
-    if: github.base_ref == `refs/head/main`
+    if: github.base_ref == 'refs/head/main'
     steps: 
       - uses: actions/download-artifact@v3
         with:
