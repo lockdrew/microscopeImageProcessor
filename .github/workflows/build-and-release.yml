@@ -37,6 +37,6 @@ jobs:
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
       - name: Create Release 
-        run: gh release create ${{ steps.get_version.outputs.VERSION }} cli-images/linux/microscopeImageProcessor cli-images/windows/microscopeImageProcessor.exe 
+        run: gh release create ${{ steps.get_version.outputs.VERSION }} $PWD/cli-images/linux/microscopeImageProcessor $PWD/cli-images/windows/microscopeImageProcessor.exe 
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
