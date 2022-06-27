@@ -32,11 +32,11 @@ jobs:
           name: cli-images
           path: cli-images
       - name: List Downloaded Artifacts 
-        run: ls cli-images 
+        run: ls $PWD/cli-images 
       - name: Get the version
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
       - name: Create Release 
-        run: gh release create ${{ steps.get_version.outputs.VERSION }} cli-images/linux/microscopeImageProcessor cli-images/windows/microscopeImageProcessor 
+        run: gh release create ${{ steps.get_version.outputs.VERSION }} cli-images/linux/microscopeImageProcessor cli-images/windows/microscopeImageProcessor.exe 
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
